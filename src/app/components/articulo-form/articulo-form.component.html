@@ -1,0 +1,24 @@
+<div class="container mt-5 w-50">
+    <form (ngSubmit)="onSubmit()">
+        <fieldset>
+            <legend>Artículos Form</legend>
+            <div class="form-group">
+                <label for="detalle" class="form-label mt-4">Detalle</label>
+                <input type="text" class="form-control" id="detalle" [(ngModel)]="articulo.detalle" name="detalle"
+                    placeholder="Enter detail (long: 6 to 60)" minlength="6" maxlength="60" required>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label mt-4">Precio</label>
+                <input type="number" class="form-control" id="precio" [(ngModel)]="articulo.precio" name="precio"
+                    placeholder="10.50" required>
+            </div>
+            <div class="d-grid gap-2 mt-5">
+                <button type="submit" class="btn btn-success" *ngIf="add">add New record</button>
+                <button type="submit" class="btn btn-info" *ngIf="upd">update this record</button>
+                <button type="submit" class="btn btn-danger" *ngIf="del">delete this record!</button>
+                <button type="button" class="btn btn-secondary mt-3" [routerLink]="['/articulos']">cancel</button>
+            </div>
+
+        </fieldset>
+    </form>
+</div>
